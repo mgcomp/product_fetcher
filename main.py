@@ -10,7 +10,7 @@ settings.setup_global_logger()
 # Create logger
 logger = logging.getLogger(settings.WEB_SCRAPPER_GLOBAL_LOGGER_NAME)
 
-# Create in memory sqlite db
+# Create db: since create_tables is set to True, this will override the db file.
 db = DbInterface(settings.WEB_SCRAPPER_DATABASE_PRODUCTION, create_tables = True, turn_on_logging = False)
 
 vp = VestelPageProcessor(db)

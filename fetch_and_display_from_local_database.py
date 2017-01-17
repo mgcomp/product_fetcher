@@ -22,6 +22,7 @@ try:
         print(prod)
 
     logger.info("\n\n\nTEST 3\n\n\n\n")
+    # "url.contains" is not a very efficient query, but this is for educational purposes
     for prod in dbSession.query(Product).filter(Product.url.contains('perilla')).filter(Product.price > 90):
         print(prod)
         pprint.pprint(json.loads(str(prod.description)))
